@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>GTm company</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#664900',
+                            text: '#F4C430',
+                            dark: '#453100',
+                            glow: 'rgba(244, 196, 48, 0.35)',
+                            light: '#ffe17d'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'system-ui', 'sans-serif'],
+                        sub: ['Plus Jakarta Sans', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base rules ensuring persistent dark tone & custom palette */
+        :root {
+            --color-bg: #664900;
+            --color-text: #F4C430;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            min-height: 100dvh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Responsive typography with clamp to guarantee it fits on mobile without wrapping */
+        .title-line-1 {
+            /* Exactly tuned to fit 11 characters on portrait phones (320px+) without breaking */
+            font-size: clamp(1.85rem, 8.2vw, 5.2rem);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), 0 0 25px rgba(244, 196, 48, 0.2);
+            white-space: nowrap;
+        }
+
+        .title-line-2 {
+            /* Proportionally smaller than line 1 */
+            font-size: clamp(1.4rem, 6.2vw, 3.8rem);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+        }
+
+        /* Subtle ambient vignette and golden aura */
+        .ambient-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(244, 196, 48, 0.12) 0%, rgba(102, 73, 0, 0) 70%),
+                        radial-gradient(circle at 50% 0%, rgba(0, 0, 0, 0.25) 0%, transparent 60%);
+        }
+
+        /* Floating animation */
+        @keyframes subtleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .floating {
+            animation: subtleFloat 6s ease-in-out infinite;
+        }
+
+        /* Shimmer pulse for the badge */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.4; }
+        }
+
+        .pulse-indicator {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="relative flex flex-col justify-between items-center selection:bg-[#F4C430] selection:text-[#664900]">
+
+    <!-- Interactive Canvas for Subtle Ambient Golden Particles -->
+    <canvas id="ambient-canvas" class="absolute inset-0 pointer-events-none z-0 w-full h-full opacity-40"></canvas>
+
+    <!-- Ambient Gradient Overlay -->
+    <div class="absolute inset-0 ambient-glow pointer-events-none z-0"></div>
+
+    <!-- Header bar / Subtle brand status -->
+    <header class="w-full max-w-5xl px-6 pt-6 sm:pt-8 flex justify-between items-center z-10">
+        <!-- Status indicator -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#F4C430]/30 bg-[#453100]/40 backdrop-blur-sm text-xs sm:text-sm font-sub font-semibold tracking-wider uppercase">
+            <span class="w-2 h-2 rounded-full bg-[#F4C430] pulse-indicator"></span>
+            <span>Online</span>
+        </div>
+
+        <!-- Minimalist time / timezone indicator -->
+        <div id="live-time" class="text-xs sm:text-sm font-sub font-medium opacity-80 tracking-widest uppercase">
+            --:--:--
+        </div>
+    </header>
+
+    <!-- Main Content Area: Centered vertically & horizontally -->
+    <main class="w-full max-w-4xl px-4 py-8 flex flex-col items-center justify-center my-auto z-10 text-center">
+        
+        <div class="floating w-full flex flex-col items-center">
+            <!-- Decorative Accent Line -->
+            <div class="w-16 h-1 rounded-full bg-[#F4C430]/40 mb-6 sm:mb-8"></div>
+
+            <!-- Line 1: GTm company (Bold, fits portrait phones perfectly) -->
+            <h1 class="title-line-1 font-black text-[#F4C430] tracking-tight uppercase select-text transition-transform duration-300 hover:scale-[1.02]">
+                GTm company
+            </h1>
+
+            <!-- Line 2: Привет (Slightly smaller, fits cleanly below) -->
+            <h2 class="title-line-2 font-bold text-[#F4C430]/90 mt-2 sm:mt-4 select-text transition-transform duration-300 hover:scale-[1.02]">
+                Привет
+            </h2>
+
+            <!-- Decorative pill with micro-interaction -->
+            <div class="mt-8 sm:mt-10">
+                <button id="action-btn" class="group relative px-6 py-2.5 rounded-full border border-[#F4C430]/50 bg-[#453100]/50 text-[#F4C430] font-sub font-semibold text-sm sm:text-base tracking-wide transition-all duration-300 hover:bg-[#F4C430] hover:text-[#664900] active:scale-95 shadow-lg shadow-black/20 focus:outline-none">
+                    <span id="btn-text">Добро пожаловать</span>
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-5xl px-6 pb-6 sm:pb-8 flex flex-col sm:flex-row justify-between items-center gap-3 z-10 text-xs font-sub opacity-75">
+        <p class="tracking-wide">
+            &copy; <span id="current-year"></span> GTm company
+        </p>
+        <p class="tracking-widest uppercase text-[10px] sm:text-xs">
+            Dark Minimalist Experience
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Update current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Live Clock in Header
+        function updateTime() {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('ru-RU', { 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit' 
+            });
+            const timeEl = document.getElementById('live-time');
+            if (timeEl) timeEl.textContent = timeStr;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Button micro-interaction
+        const actionBtn = document.getElementById('action-btn');
+        const btnText = document.getElementById('btn-text');
+        const greetings = [
+            'Добро пожаловать',
+            'Рады вас видеть',
+            'Успешного дня ✨',
+            'GTm company'
+        ];
+        let greetingIndex = 0;
+
+        actionBtn.addEventListener('click', () => {
+            greetingIndex = (greetingIndex + 1) % greetings.length;
+            btnText.textContent = greetings[greetingIndex];
+            
+            // Subtle pulse visual feedback
+            actionBtn.classList.add('scale-105');
+            setTimeout(() => {
+                actionBtn.classList.remove('scale-105');
+            }, 150);
+        });
+
+        // Ambient Gold Particle Background (Canvas)
+        const canvas = document.getElementById('ambient-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animationFrameId;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            initParticles();
+        }
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.8;
+                this.speedX = (Math.random() - 0.5) * 0.4;
+                this.speedY = (Math.random() - 0.5) * 0.4 - 0.15;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.fadeSpeed = 0.003 + Math.random() * 0.004;
+                this.fadingIn = Math.random() > 0.5;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Opacity pulse
+                if (this.fadingIn) {
+                    this.opacity += this.fadeSpeed;
+                    if (this.opacity >= 0.7) this.fadingIn = false;
+                } else {
+                    this.opacity -= this.fadeSpeed;
+                    if (this.opacity <= 0.1) this.fadingIn = true;
+                }
+
+                // Wrap boundaries
+                if (this.x < 0) this.x = canvas.width;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.y < 0) this.y = canvas.height;
+                if (this.y > canvas.height) this.y = 0;
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(244, 196, 48, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            // Calculate particle count dynamically based on screen size
+            const count = Math.floor((canvas.width * canvas.height) / 18000);
+            const clampedCount = Math.min(Math.max(count, 20), 70);
+            for (let i = 0; i < clampedCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            animationFrameId = requestAnimationFrame(animate);
+        }
+
+        // Initialize and listen for window resizing
+        window.addEventListener('resize', resizeCanvas);
+        window.addEventListener('DOMContentLoaded', () => {
+            resizeCanvas();
+            animate();
+        });
+    </script>
+</body>
+</html>
