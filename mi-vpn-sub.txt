@@ -1,4 +1,4 @@
-# profile-title: mi-vpn-sub | SGM-RoK_Bot (1) 5.11.26
+# profile-title: mi-vpn-sub | SGM-RoK_Bot | (1) | 5.11.26
 
 vless://fc7d2cfe-f5ef-40c8-a848-a0bdc11f6349@104.17.11.191:443?type=ws&headerType=none&security=tls&encryption=none&sni=vpn.cintaku.qzz.io&path=%2Fvlessws&host=vpn.cintaku.qzz.io#%F0%9F%87%A8%F0%9F%87%A6%20Canada%20-%20MIFA%20-%208479
 vless://fc7d2cfe-f5ef-40c8-a848-a0bdc11f6349@172.67.166.188:443?type=ws&headerType=none&security=tls&encryption=none&sni=vpn.cintaku.qzz.io&fp=chrome&path=%2Fvlessws&host=vpn.cintaku.qzz.io#%F0%9F%87%A8%F0%9F%87%A6%20Canada%20-%20MIFA%20-%207351
