@@ -77,24 +77,6 @@
             gap: 1.15rem;
         }
 
-        .card-header {
-            text-align: center;
-            margin-bottom: 0.25rem;
-        }
-
-        .card-badge {
-            display: inline-block;
-            padding: 0.3rem 0.85rem;
-            border-radius: 999px;
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--gold-main);
-            background: rgba(244, 196, 48, 0.12);
-            border: 1px solid rgba(244, 196, 48, 0.25);
-        }
-
         .action-btn {
             display: flex;
             align-items: center;
@@ -112,7 +94,7 @@
 
         .action-btn:hover {
             transform: translateY(-2px);
-            filter: brightness(1.06);
+            filter: brightness(1.08);
         }
 
         .action-btn:active {
@@ -126,29 +108,29 @@
         }
 
         .btn-youtube {
-            background: linear-gradient(135deg, #FF2A2A 0%, #E60000 60%, #B80000 100%);
+            background: linear-gradient(135deg, #D91E18 0%, #B30000 58%, #850000 100%);
             color: #FFFFFF;
-            border: 1px solid rgba(255, 165, 165, 0.45);
-            box-shadow: 0 10px 26px rgba(255, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(255, 150, 150, 0.32);
+            box-shadow: 0 10px 26px rgba(185, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
         }
 
         .btn-youtube:hover {
-            box-shadow: 0 14px 32px rgba(255, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+            box-shadow: 0 14px 32px rgba(210, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
         }
 
         .btn-net {
-            background: linear-gradient(135deg, #7DD3FC 0%, #38BDF8 55%, #0284C7 100%);
-            color: #06253A;
-            border: 1px solid rgba(224, 242, 254, 0.65);
-            box-shadow: 0 10px 26px rgba(56, 189, 248, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 55%, #0369A1 100%);
+            color: #FFFFFF;
+            border: 1px solid rgba(186, 230, 253, 0.42);
+            box-shadow: 0 10px 26px rgba(2, 132, 199, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.32);
         }
 
         .btn-net:hover {
-            box-shadow: 0 14px 32px rgba(56, 189, 248, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            box-shadow: 0 14px 32px rgba(14, 165, 233, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.42);
         }
 
         .back-link {
-            margin-top: 0.25rem;
+            margin-top: 0.2rem;
             align-self: center;
             display: inline-flex;
             align-items: center;
@@ -173,10 +155,6 @@
     <canvas id="ambient-canvas"></canvas>
 
     <main class="glass-card">
-        <div class="card-header">
-            <span class="card-badge">Gtm-company and Gold_naget</span>
-        </div>
-
         <a href="https://www.youtube.com/@Gold_naget" target="_blank" rel="noopener noreferrer" class="action-btn btn-youtube">
             <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -185,11 +163,8 @@
         </a>
 
         <a href="https://gtm-company.github.io/all/net" class="action-btn btn-net">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="7.5" cy="15.5" r="4.5"/>
-                <path d="M10.7 12.3L19.5 3.5"/>
-                <path d="M16 7l2.5 2.5"/>
-                <path d="M18.5 4.5l2.5 2.5"/>
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
             </svg>
             <span>Ускоритель интернета</span>
         </a>
@@ -278,6 +253,21 @@
             }
             animationFrameId = requestAnimationFrame(animate);
         }
+
+        window.addEventListener('resize', () => {
+            cancelAnimationFrame(animationFrameId);
+            resizeCanvas();
+            animate();
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            resizeCanvas();
+            animate();
+        });
+    </script>
+</body>
+</html>
+
 
         window.addEventListener('resize', () => {
             cancelAnimationFrame(animationFrameId);
