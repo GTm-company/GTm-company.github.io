@@ -7,10 +7,10 @@ window.SITE_LINKS = {
 
     // Ссылки для раздела Gold_Naget (/Gall)
     youtube: "https://www.youtube.com/@Gold_naget",
-    twitch: "",      // Вставь ссылку на Twitch, когда понадобится
-    telegram: "",    // Вставь ссылку на Telegram, когда включишь
-    soon: "",        // Ссылка для кнопки "СКОРО"
-    donate: "",      // Вставь ссылку на DonationAlerts
+    twitch: "https://gtm-company.github.io/no-link/",      // Вставь ссылку на Twitch, когда понадобится
+    telegram: "https://gtm-company.github.io/no-link/",    // Вставь ссылку на Telegram, когда включишь
+    soon: "https://gtm-company.github.io/no-link/",        // Ссылка для кнопки "СКОРО"
+    donate: "https://gtm-company.github.io/no-link/",      // Вставь ссылку на DonationAlerts
 
     // Ссылка подписки для копирования на странице /Coall/net
     vpn_sub: "https://raw.githubusercontent.com/GTm-company/GTm-company.github.io/refs/heads/main/mi-vpn-sub.txt"
