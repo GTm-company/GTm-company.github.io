@@ -13,7 +13,7 @@ window.SITE_LINKS = {
     donate: "https://gtm-company.github.io/no-link/",      // Вставь ссылку на DonationAlerts
 
     // Ссылка подписки для копирования на странице /Coall/net
-    vpn_sub: "https://raw.githubusercontent.com/GTm-company/GTm-company.github.io/refs/heads/main/mi-vpn-sub.txt"
+    vpn_sub: "https://gtm-company.github.io/mi-vpn-sub.txt"
 };
 
 function showToast(message) {
