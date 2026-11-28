@@ -9,6 +9,7 @@ window.SITE_LINKS = {
     youtube: "https://www.youtube.com/@Gold_naget",
     twitch: "https://gtm-company.github.io/no-link/",      // Вставь ссылку на Twitch, когда понадобится
     telegram: "https://gtm-company.github.io/no-link/",    // Вставь ссылку на Telegram, когда включишь
+    tgBot: "https://t.me/RoninOfKing_bot",
     soon: "https://gtm-company.github.io/no-link/",        // Ссылка для кнопки "СКОРО"
     donate: "https://gtm-company.github.io/no-link/",      // Вставь ссылку на DonationAlerts
 
