@@ -263,6 +263,12 @@ body {
     box-shadow: 0 8px 24px rgba(36, 161, 222, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.36);
 }
 
+.btn-tgBot {
+    background: linear-gradient(135deg, rgba(36, 161, 222, 0.62) 0%, rgba(2, 132, 199, 0.50) 100%);
+    border: 1px solid rgba(186, 230, 253, 0.38);
+    box-shadow: 0 8px 24px rgba(36, 161, 222, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.36);
+}
+
 .btn-dark {
     background: linear-gradient(135deg, rgba(18, 16, 20, 0.70) 0%, rgba(10, 9, 12, 0.58) 100%);
     border: 1px solid rgba(255, 255, 255, 0.16);
