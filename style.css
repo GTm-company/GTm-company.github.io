@@ -288,6 +288,12 @@ body {
     color: #ECFDF5;
 }
 
+.circle-tgBot {
+    background: rgba(2, 132, 199, 0.66);
+    border: 1px solid rgba(186, 230, 253, 0.38);
+    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.32);
+}
+
 .btn-darkgreen.is-copied {
     background: linear-gradient(135deg, rgba(16, 185, 129, 0.76) 0%, rgba(5, 150, 105, 0.64) 100%);
     border-color: rgba(209, 250, 229, 0.52);
@@ -352,12 +358,6 @@ body {
 }
 
 .circle-telegram {
-    background: rgba(2, 132, 199, 0.66);
-    border: 1px solid rgba(186, 230, 253, 0.38);
-    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.32);
-}
-
-.circle-tgBot {
     background: rgba(2, 132, 199, 0.66);
     border: 1px solid rgba(186, 230, 253, 0.38);
     box-shadow: 0 6px 18px rgba(2, 132, 199, 0.32);
