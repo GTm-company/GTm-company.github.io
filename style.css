@@ -357,6 +357,12 @@ body {
     box-shadow: 0 6px 18px rgba(2, 132, 199, 0.32);
 }
 
+.circle-tgBot {
+    background: rgba(2, 132, 199, 0.66);
+    border: 1px solid rgba(186, 230, 253, 0.38);
+    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.32);
+}
+
 .circle-donate {
     background: rgba(28, 25, 30, 0.72);
     border: 1px solid rgba(251, 191, 36, 0.35);
